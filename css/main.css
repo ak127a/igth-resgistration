@@ -1,45 +1,75 @@
-body{
-    background: #000;
+body {
+  background: #000;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-#register-button{
-    background:#28a8e0;
-    size: 50px;
 
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
 }
-@media only screen and (min-width: 1024px)
-{
-    #register-card{
-        width: 50%;
-    }
-    #name-field{
-        width: 400px;
-    }
-    #teamname-field{
-        width: 400px;
-    }
-    #pass-field-1{
-        width: 400px;   
-    }
-    #pass-field-2{
-        width: 400px;
-    }
 
+.heading {
+  font-size: 20px;
 }
-@media only screen and (max-width: 1024px)
-{
-    #register-card{
-        width: 95%;
-    }
-    #name-field{
-        width: 300px;
-    }
-    #teamname-field{
-        width: 300px;
-    }
-    #pass-field-1{
-        width: 300px;   
-    }
-    #pass-field-2{
-        width: 300px;
-    }
+
+#register-button {
+  margin-top: 20px;
+  background: #3fb9ee;
+  width: 170px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+input {
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 10px;
+  border: 1px solid rgb(175, 175, 175);
+}
+
+#register-card {
+  margin-bottom: 100px;
+}
+
+@media only screen and (min-width: 1024px) {
+  #register-card {
+    width: 50%;
+  }
+  #name-field {
+    width: 400px;
+  }
+  #teamname-field {
+    width: 400px;
+  }
+  #pass-field-1 {
+    width: 400px;
+  }
+  #pass-field-2 {
+    width: 400px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #register-card {
+    width: 85%;
+  }
+  #name-field {
+    width: 300px;
+  }
+  #teamname-field {
+    width: 300px;
+  }
+  #pass-field-1 {
+    width: 300px;
+  }
+  #pass-field-2 {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  #logo {
+    max-width: 500px;
+  }
 }

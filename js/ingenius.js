@@ -6,7 +6,13 @@
 // console.log(JSON.parse(xhttp.responseText));
 
 // Your web app's Firebase configuration
-var teamName;
+var teamName = "";
+const form = document.getElementById("register-form");
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  registerUser();
+});
 
 var firebaseConfig = {
   apiKey: "AIzaSyC-emvUYmB4BRnrqv8odgvZHJtvWA_DELg",
@@ -51,7 +57,13 @@ function addUserData(uid) {
   var chapter5 = shuffle([0, 1, 2]);
   database.ref("/teams/" + uid).set({
     chapterlist: chapterlist,
-    cluelist: [chapter1, chapter2, chapter3, chapter4, chapter5],
+    cluelist: {
+      c1: chapter1,
+      c2: chapter2,
+      c3: chapter3,
+      c4: chapter4,
+      c5: chapter5
+    },
     chapter: 1,
     clue: 0
   });
@@ -59,6 +71,7 @@ function addUserData(uid) {
 
 function addUidTeamName(uid) {
   var database = firebase.database();
+  console.log(teamName);
 
   database.ref("/uidteamname/" + uid).set({
     teamName: teamName
@@ -77,7 +90,6 @@ firebase.auth().onAuthStateChanged(user => {
 });
 
 async function registerUser() {
-  var form = document.getElementById("register-form");
   var username = document.getElementById("username").value + "@ingenius.com";
   teamName = document.getElementById("team-name").value;
   var password = document.getElementById("password").value;
@@ -93,7 +105,7 @@ async function registerUser() {
   } else {
     firebase
       .auth()
-      .createUserWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(username, password)
       .then(function(val) {
         console.log("Done");
         firebase
