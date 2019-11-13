@@ -1,0 +1,45 @@
+body{
+    background: #000;
+}
+#register-button{
+    background:#28a8e0;
+    size: 50px;
+
+}
+@media only screen and (min-width: 1024px)
+{
+    #register-card{
+        width: 50%;
+    }
+    #name-field{
+        width: 400px;
+    }
+    #teamname-field{
+        width: 400px;
+    }
+    #pass-field-1{
+        width: 400px;   
+    }
+    #pass-field-2{
+        width: 400px;
+    }
+
+}
+@media only screen and (max-width: 1024px)
+{
+    #register-card{
+        width: 95%;
+    }
+    #name-field{
+        width: 300px;
+    }
+    #teamname-field{
+        width: 300px;
+    }
+    #pass-field-1{
+        width: 300px;   
+    }
+    #pass-field-2{
+        width: 300px;
+    }
+}
