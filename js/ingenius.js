@@ -174,7 +174,6 @@ async function registerUser() {
           .signOut()
           .then(function() {
             console.log("Signed Out");
-            addUserData();
           });
       })
       .catch(function(error) {
